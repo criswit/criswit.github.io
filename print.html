@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Main</a></li><li class="chapter-item expanded "><a href="notes/index.html"><strong aria-hidden="true">1.</strong> Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="notes/dev-config.html"><strong aria-hidden="true">1.1.</strong> Dev Configs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="notes/dev-config/arch.html"><strong aria-hidden="true">1.1.1.</strong> Arch Linux</a></li></ol></li></ol></li></ol>            </div>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Main</a></li><li class="chapter-item expanded "><a href="notes/index.html"><strong aria-hidden="true">1.</strong> Notes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="notes/dev-config.html"><strong aria-hidden="true">1.1.</strong> Dev Configs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="notes/dev-config/arch.html"><strong aria-hidden="true">1.1.1.</strong> Arch Linux</a></li><li class="chapter-item expanded "><a href="notes/dev-config/secrets.html"><strong aria-hidden="true">1.1.2.</strong> Secrets Operations</a></li></ol></li></ol></li></ol>            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
@@ -161,6 +161,30 @@
 <li><a href="notes/dev-config/arch.html">Arch Linux</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="arch-linux"><a class="header" href="#arch-linux">Arch Linux</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="secrets"><a class="header" href="#secrets">Secrets</a></h1>
+<p>This section contains stuff on secret management/gpg/ssh/yubikey/etc</p>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
+<ul>
+<li><a href="https://github.com/drduh/YubiKey-Guide">Yubikey Guide</a></li>
+<li><a href="https://github.com/FiloSottile/yubikey-agent">Yubikey Agent</a></li>
+</ul>
+<h2 id="how-to"><a class="header" href="#how-to">How To</a></h2>
+<h3 id="open-a-connection-to-auth-agent-and-add-resident-ssh-identity"><a class="header" href="#open-a-connection-to-auth-agent-and-add-resident-ssh-identity">Open a connection to auth agent and add resident ssh identity</a></h3>
+<ol>
+<li>Start the ssh agent</li>
+</ol>
+<pre><code>eval ssh-agent $SHELL
+</code></pre>
+<ol start="2">
+<li>Add the resident identity from yubikey</li>
+</ol>
+<pre><code>ssh-add -K
+</code></pre>
+<p>Enter your pin and you are done. Output will be like</p>
+<pre><code>❯ ssh-add -K
+Enter PIN for authenticator: 
+Resident identity added: ECDSA-SK SHA256:6451MOXmAplsLFnosKOozJ/R0TkpsaxDUT1HddSwfYg
+</code></pre>
 
                     </main>
 
