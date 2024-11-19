@@ -1,3 +1,10 @@
 # Summary
 
-- [Chapter 1](./chapter_1.md)
+[Main](index.md)
+
+- [Notes](notes/index.md)
+    - [Dev Configs](notes/dev-config.md)
+        - [Arch Linux](notes/dev-config/arch.md)
+
+
+
